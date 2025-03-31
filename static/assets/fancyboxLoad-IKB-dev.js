@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 动态添加 Fancybox 的 CSS 文件
     const fancyboxLink = Object.assign(document.createElement('link'), {
         rel: 'stylesheet', // 设置 link 标签的 rel 属性
-        href: 'https://international.klein.blue/assets/fancybox.css' // 设置 Fancybox CSS 的地址（请根据实际需要修改）
+        href: 'https://dev.klein.blue/assets/fancybox.css' // 设置 Fancybox CSS 的地址（请根据实际需要修改）
     });
     document.head.appendChild(fancyboxLink); // 将 CSS 文件添加到 <head> 中
 
