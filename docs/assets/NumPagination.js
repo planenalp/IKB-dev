@@ -77,8 +77,20 @@ function updatePagination(totalPages, currentPage) {
     // 添加样式
     var style = document.createElement('style');
     style.textContent = `
+        .pagination a {
+            border: unset;
+            border-radius: unset;
+        }
+        
         .pagination a.current-page {
             border: 1px solid rgba(240, 246, 252, 0.1);
+        }
+
+        /* 悬停自定义 */
+        @media (any-hover: hover) {
+            .pagination a:hover {
+                border-color: transparent;
+            }
         }
         
         /* 强制覆盖原文件 @media (min-width: 544px) 才激活 display: inline-block 的设定 */
