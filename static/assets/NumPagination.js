@@ -135,6 +135,7 @@ function updatePagination(totalPages, currentPage) {
         .pagination a:active {
             background-color: var(--color-active-bg);
             color: var(--color-active-text);
+            transform: scale(0.9);
             transition: 0.1s ease;
         }
         
