@@ -14,8 +14,8 @@
     "dayTheme":"light",
     "nightTheme":"dark",
     "urlMode":"issue",
-    "script":"<script src='https://dev.klein.blue/assets/fancybox.umd.js'></script><script src='https://dev.klein.blue/assets/fancyboxLoad-IKB.js'></script><script src='https://dev.klein.blue/assets/AriticleTocTopBot-IKB.js'></script>",
-    "allHead":"<script src='https://dev.klein.blue/assets/Theme-IKB.js'></script>",
+    "script":"<script src='https://dev.klein.blue/assets/fancybox.umd.js'></script><script src='https://dev.klein.blue/assets/fancyboxLoad-IKB-dev.js'></script><script src='https://dev.klein.blue/assets/AriticleTocTopBot-IKB-dev.js'></script>",
+    "allHead":"<script src='https://dev.klein.blue/assets/Theme-IKB-dev.js'></script>",
     "indexScript":"<script src='https://dev.klein.blue/assets/NumPagination.js'></script>",
     "showPostSource":0,
     "primerCSS":"<link href='https://dev.klein.blue/assets/primer.css' rel='stylesheet' />"
