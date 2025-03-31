@@ -90,7 +90,14 @@ function updatePagination(totalPages, currentPage) {
         @media (any-hover: hover) {
             .pagination a:hover {
                 border-color: transparent;
+                background-color: #002fa7;
+                color: #f5f5f5;
             }
+        }
+
+        .pagination a:active {
+            background-color: #002fa7;
+            color: #f5f5f5;
         }
         
         /* 强制覆盖原文件 @media (min-width: 544px) 才激活 display: inline-block 的设定 */
