@@ -77,6 +77,11 @@ function updatePagination(totalPages, currentPage) {
     // 添加样式
     var style = document.createElement('style');
     style.textContent = `
+        .pagination a {
+            border: unset;
+            border-radius: unset;
+        }
+        
         .pagination a.current-page {
             border: 1px solid rgba(240, 246, 252, 0.1);
         }
