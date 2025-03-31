@@ -84,32 +84,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }));
         }
 
-        async function probeFormat(baseUrl) {
-            if (formatCache.has(baseUrl)) {
-                return formatCache.get(baseUrl);
-            }
+        // 修改：支持多个 baseUrl
+        async function probeFormat(baseUrls) {
+            for (const baseUrl of baseUrls) {
+                if (formatCache.has(baseUrl)) {
+                    return formatCache.get(baseUrl);
+                }
 
-            const probes = FORMAT_PRIORITY.map(ext => {
-                const url = `${baseUrl}.${ext}`;
-                return new Promise(resolve => {
-                    const img = new Image();
-                    img.onload = () => resolve(url);
-                    img.onerror = () => resolve(null);
-                    img.src = url;
+                const probes = FORMAT_PRIORITY.map(ext => {
+                    const url = `${baseUrl}.${ext}`;
+                    return new Promise(resolve => {
+                        const img = new Image();
+                        img.onload = () => resolve(url);
+                        img.onerror = () => resolve(null);
+                        img.src = url;
+                    });
                 });
-            });
 
-            for (const urlPromise of probes) {
-                const result = await urlPromise;
-                if (result) {
-                    formatCache.set(baseUrl, result);
-                    return result;
+                for (const urlPromise of probes) {
+                    const result = await urlPromise;
+                    if (result) {
+                        formatCache.set(baseUrl, result);
+                        return result;
+                    }
                 }
             }
-            return null;
+            return null; // 所有地址都失败时返回 null
         }
 
-        // 修改：增加主题匹配检查
+        // 修改：增加主题匹配检查，并支持多个 baseUrl
         async function createLoader(targetTheme, version) {
             const stored = getStoredBg();
             
@@ -122,10 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const prefix = targetTheme === 'dark' ? 'bgDark' : 'bgLight';
             const totalImages = 10;
             const randomNum = Math.floor(Math.random() * totalImages) + 1;
-            const baseUrl = `https://dev.klein.blue/bg/${prefix}${randomNum}`;
+            // 定义主地址和备选地址
+            const primaryBaseUrl = `https://dev.klein.blue/bg/${prefix}${randomNum}`;
+            const fallbackBaseUrl = `https://planenalp.github.io/IKB-dev/bg/${prefix}${randomNum}`;
+            const baseUrls = [primaryBaseUrl, fallbackBaseUrl]; // 数组形式支持多个地址
 
             try {
-                const finalUrl = await probeFormat(baseUrl);
+                const finalUrl = await probeFormat(baseUrls);
                 if (!finalUrl || version !== currentVersion) return false;
 
                 document.documentElement.style.setProperty('--bgURL', `url("${finalUrl}")`);
