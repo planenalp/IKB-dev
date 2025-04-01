@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
         --LabelName-bgColor: #007fff;
         --text-hover-color: #f5f5f5;
         --themeSwitch-color: #656d76;
+        --code-bgColor: #0000001a;
     }
     /* 通用暗主题配色 */
     [data-color-mode=light][data-light-theme=dark],
@@ -242,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
         --LabelName-bgColor: #007fff;
         --text-hover-color: #f5f5f5;
         --themeSwitch-color: #7d8590;
+        --code-bgColor: #ffffff1a;
     }
 
     /* 主页主题 */
@@ -412,6 +414,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         /* 按钮 */
         .btn {
+            border-radius: unset;
+            border: unset;
+            box-shadow: unset;
             -webkit-tap-highlight-color: transparent; /* 修复某些安卓设备的点击外框 */
             -webkit-touch-callout: none; /* 禁用 iOS 长按弹出菜单 */
             -webkit-user-select: none; /* 禁用 iOS Safari 和其他 WebKit 内核浏览器的文本选择 */
@@ -425,6 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
         @media (any-hover: hover) {
             .btn:hover {
                 background-color: var(--btn-hover-bgColor);
+                box-shadow: var(--box-shadow);
                 transition: 0.1s ease;
                 .octicon { color: var(--icon-hover-color); }
                 #themeSwitch { color: var(--icon-hover-color); }
@@ -440,6 +446,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /* 按钮按压 */
         .btn:active {
             background-color: var(--btn-hover-bgColor);
+            box-shadow: var(--box-shadow);
             transform: scale(0.9);
             transition: 0.1s ease;
             .octicon { color: var(--icon-hover-color); }
@@ -653,6 +660,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         /* 按钮 */
         .btn {
+            border-radius: unset;
+            border: unset;
+            box-shadow: unset;
             -webkit-tap-highlight-color: transparent; /* 修复某些安卓设备的点击外框 */
             -webkit-touch-callout: none; /* 禁用 iOS 长按弹出菜单 */
             -webkit-user-select: none; /* 禁用 iOS Safari 和其他 WebKit 内核浏览器的文本选择 */
@@ -666,6 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
         @media (any-hover: hover) {
             .btn:hover {
                 background-color: var(--btn-hover-bgColor);
+                box-shadow: var(--box-shadow);
                 transition: 0.1s ease;
                 .octicon { color: var(--icon-hover-color); }
                 #themeSwitch { color: var(--icon-hover-color); }
@@ -681,6 +692,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /* 按钮按压 */
         .btn:active {
             background-color: var(--btn-hover-bgColor);
+            box-shadow: var(--box-shadow);
             transform: scale(0.9);
             transition: 0.1s ease;
             .octicon { color: var(--icon-hover-color); }
@@ -690,6 +702,18 @@ document.addEventListener('DOMContentLoaded', function() {
         /* 按钮图标色 */
         #themeSwitch {
             color: var(--themeSwitch-color);
+        }
+
+        /* 单行代码 */
+        .markdown-body code, .markdown-body tt {
+            background-color: var(--code-bgColor);
+            border-radius: unset;
+        }
+
+        /* 多行代码 */
+        .markdown-body .highlight pre, .markdown-body pre {
+            background-color: var(--code-bgColor);
+            border-radius: unset;
         }
 
         /* 评论按钮 */
@@ -840,6 +864,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         /* 按钮 */
         .btn {
+            border-radius: unset;
+            border: unset;
+            box-shadow: unset;
             -webkit-tap-highlight-color: transparent; /* 修复某些安卓设备的点击外框 */
             -webkit-touch-callout: none; /* 禁用 iOS 长按弹出菜单 */
             -webkit-user-select: none; /* 禁用 iOS Safari 和其他 WebKit 内核浏览器的文本选择 */
@@ -854,6 +881,7 @@ document.addEventListener('DOMContentLoaded', function() {
             /* 所有按钮 */
             .btn:hover {
                 background-color: var(--btn-hover-bgColor);
+                box-shadow: var(--box-shadow);
                 transition: 0.1s ease;
                 /* 所有按钮 SVG 图标 */
                 .octicon { color: var(--icon-hover-color); }
@@ -877,6 +905,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /* 按钮按压 */
         .btn:active {
             background-color: var(--btn-hover-bgColor);
+            box-shadow: var(--box-shadow);
             transform: scale(0.9);
             transition: 0.1s ease;
             .octicon { color: var(--icon-hover-color); }
