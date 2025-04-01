@@ -20,7 +20,7 @@
     "allHead":"<script src='https://planenalp.github.io/IKB-dev/assets/Theme-IKB-dev.js'></script>",
     "indexScript":"<script src='https://dev.klein.blue/assets/NumPagination-IKB-dev.js'></script>",
     "indexScript":"<script src='https://planenalp.github.io/IKB-dev/assets/NumPagination-IKB-dev.js'></script>",
-    "primerCSS":"<link href='https://dev.klein.blue/assets/primer.css' rel='stylesheet' />",
     "primerCSS":"<link href='https://planenalp.github.io/IKB-dev/assets/primer.css' rel='stylesheet' />",
+    "primerCSS":"<link href='https://dev.klein.blue/assets/primer.css' rel='stylesheet' />",
     "showPostSource":0
 }
